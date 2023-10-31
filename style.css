@@ -1,0 +1,283 @@
+* {
+    padding: 0;
+    margin: 0;
+    font-family: sans-serif;
+    box-sizing: border-box;
+}
+
+html {
+    overflow-x: hidden;
+}
+
+body {
+    overflow-x: hidden;
+}
+
+section {
+    position: relative;
+    width: 100%;
+    padding: 100px;
+    height: 100vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header {
+    position: absolute;
+    width: 100%;
+    padding: 20px 100px;
+    left: 0;
+    top: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+ul li {
+    list-style-type: none;
+    display: block;
+    margin-left: 20px;
+}
+
+header ul li a {
+    text-decoration: none;
+    font-weight: 400;
+    color: #333;
+}
+
+
+nav ul {
+    display: flex;
+
+}
+
+section header .logo {
+    position: relative;
+    max-width: 80px;
+}
+
+/*all done for top part*/
+
+/*all done for top part*/
+.content {
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    top: 100px;
+    user-select: none;
+}
+
+.content .content-box h2 {
+    color: #333;
+    font-size: 4em;
+    line-height: 1.4em;
+    font-weight: 500;
+}
+
+.content .content-box h2 span {
+    color: #017143;
+    font-weight: 900;
+    font-size: 1.2em;
+}
+
+.content .content-box p {
+    color: #333
+}
+
+.content .content-box a {
+    display: inline-block;
+    padding: 8px 20px;
+    text-decoration: none;
+    letter-spacing: 1px;
+    color: #fff;
+    background-color: #017143;
+    margin-top: 20px;
+    border-radius: 40px;
+}
+
+.content .img-box {
+    width: 600px;
+    display: flex;
+    justify-content: flex-end;
+    margin-left: 50px;
+    padding-left: 50px;
+    margin-top: 0;
+}
+
+.content .img-box img {
+    width: 450px;
+    height: 450px;
+    border-radius: 50%;
+}
+
+.thumb {
+    position: absolute;
+    left: 50%;
+    bottom: 20px;
+    transform: translateX(-50%);
+    display: flex;
+    margin-top: 20px;
+
+}
+
+.thumb li {
+    list-style-type: none;
+    display: inline-block;
+    cursor: pointer;
+    transition: 0.5s;
+    margin: 0 10px;
+}
+
+.thumb li:hover {
+    transform: scale(0.7);
+}
+
+.thumb li img {
+    border-radius: 50%;
+    max-width: 60px;
+    max-height: 60x;
+}
+
+/*use of clip path*/
+.circle {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #017143;
+    clip-path: circle(600px at right 800px);
+}
+
+.menu {
+    display: none;
+    background-color: transparent;
+}
+
+.mobile-nav-icon {
+    width: 3em;
+    height: 4em;
+}
+
+.mobile-navbar-btn {
+    display: none;
+    background: transparent;
+}
+
+@media (max-width: 600px) {
+    header {
+        padding: 20px 30px;
+    }
+
+    .content {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        top: 300px;
+        z-index: 1000;
+    }
+
+    .mobile-navbar-btn {
+        display: block;
+    }
+
+    .content .content-box h2 {
+        font-weight: 600;
+        font-size: 4em;
+    }
+
+    .content .img-box {
+        width: 100px;
+        display: flex;
+        justify-content: center;
+    }
+
+    .content .img-box img {
+        width: 300px;
+        height: 300px;
+    }
+
+    .circle {
+        top: 600px;
+        height: 80%;
+    }
+
+    .type ul {
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        left: 10%;
+        bottom: -300px;
+        margin-top: 20px;
+        z-index: 1000;
+    }
+
+    .mobile-navbar-btn [name="close"] {
+        display: none;
+    }
+
+    .nav1 {
+        width: 100%;
+        height: 100vh;
+        position: fixed;
+        background-color: #017143;
+        top: 0;
+        left: 0;
+        display: flex;
+        align-items: center;
+        font-size: 1em;
+        justify-content: center;
+        transform: translateY(100%);
+        transition: all 0.4s linear;
+        opacity: 1;
+        visibility: hidden;
+        pointer-events: none;
+    }
+
+    .nav1 .navigation {
+        position: fixed;
+        flex-direction: column;
+        align-items: center;
+        gap: 12px;
+
+    }
+
+    .nav1 .navigation li a {
+        font-size: 1.5em;
+        font-weight: 600;
+
+    }
+
+    body .active {
+        overflow: hidden;
+    }
+
+    .active .nav1 {
+        transform: translateX(0);
+        opacity: 1;
+        visibility: visible;
+        pointer-events: none;
+    }
+
+    .active .thumb {
+        opacity: 0;
+    }
+
+    .active .content {
+        opacity: 0;
+        display: none;
+    }
+
+    .active .mobile-navbar-btn [name="close"] {
+        display: block;
+    }
+
+    .active .mobile-navbar-btn [name="menu"] {
+        display: none;
+    }
+}

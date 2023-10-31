@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LandingPage</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <section class="c">
+        <div class="circle"></div>
+        <header class="header">
+            <img src="public/th.jpeg" alt="starbucklog" class="logo">
+            <nav class="nav1">
+                <ul class="navigation">
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Services</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="mobile-navbar-btn">
+                <ion-icon name="menu" class="mobile-nav-icon"></ion-icon>
+                <ion-icon name="close" class="mobile-nav-icon"></ion-icon>
+            </div>
+        </header>
+        <div class="content">
+            <div class="content-box">
+                <h2>It's not just coffee<br>It's <span class="strcolor">Starbucks</span></h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam ipsa aperiam aspernatur
+                    exercitationem necessitatibus voluptate rerum vero aut, architecto alias dolorem error optio impedit
+                    delectus nisi numquam saepe dolores veniam!</p>
+                <a href="">Learn more</a>
+            </div>
+            <div class="img-box">
+                <img src="public/d05a130b-70cd-4eeb-830e-20dd0b174f63.jpeg" class="starbucks">
+            </div>
+        </div>
+        <div class="type">
+            <ul class="thumb">
+                <li><img src="public/d05a130b-70cd-4eeb-830e-20dd0b174f63.jpeg"
+                        onclick="imgslider('public/d05a130b-70cd-4eeb-830e-20dd0b174f63.jpeg');colorchange('#017143');strcolor('#017143')">
+                </li>
+                <li><img src="public/b2e8eaa2-fa58-4d35-943b-17cde6104185.jpeg"
+                        onclick="imgslider('public/b2e8eaa2-fa58-4d35-943b-17cde6104185.jpeg');colorchange('#eb7495');strcolor('#eb7495')">
+                </li>
+                <li><img src="public/278df467-1b0f-4806-bd07-291da2adfd32.jpeg"
+                        onclick="imgslider('public/278df467-1b0f-4806-bd07-291da2adfd32.jpeg');colorchange('#d752b1');strcolor('#d752b1')">
+                </li>
+            </ul>
+        </div>
+    </section>
+    <script type="text/javascript">
+        function imgslider(imagein) {
+            document.querySelector('.starbucks').src = imagein;
+        }
+        function colorchange(color) {
+            const circle = document.querySelector('.circle');
+            circle.style.background = color
+        }
+        function strcolor(colorin) {
+            const str = document.querySelector('strcolor');
+            str.style.color = colorin;
+        }
+
+        const mobile_nav = document.querySelector(".mobile-navbar-btn");
+        const nav_header = document.querySelector(".c");
+
+        const toggleMenu = () => {
+            mobile_nav.classList.toggle("active");
+            nav_header.classList.toggle("active");
+        }
+        mobile_nav.addEventListener("click", () => toggleMenu());
+    </script>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</body>
+
+</html>
